@@ -63,7 +63,16 @@ return [
         // Features::api(),
         // Features::teams(['invitations' => true]),
         Features::accountDeletion(),
+        // Features::roles(),
     ],
+    'roles' => [
+        'super-admin' => 'Super Admin',
+        'admin' => 'Admin',
+        'pegawai' => 'Pegawai',
+        'user' => 'User',
+    ],
+
+    'dashboard' =>'dashboard',
 
     /*
     |--------------------------------------------------------------------------

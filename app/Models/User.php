@@ -18,6 +18,21 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isPegawai()
+    {
+        return $this->role === 'pegawai';
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->role === 'super-admin';
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -47,6 +62,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'role' => 'string',
         'email_verified_at' => 'datetime',
     ];
 
